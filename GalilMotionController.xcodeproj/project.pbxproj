@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C6C41A327C6D864008AD9C8 /* contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418C27C6D863008AD9C8 /* contour.cpp */; };
+		9C6C41A427C6D864008AD9C8 /* ip_assigner_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419727C6D863008AD9C8 /* ip_assigner_example.cpp */; };
+		9C6C41A527C6D864008AD9C8 /* commands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419327C6D863008AD9C8 /* commands.cpp */; };
+		9C6C41A627C6D864008AD9C8 /* jog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419927C6D863008AD9C8 /* jog.cpp */; };
+		9C6C41A727C6D864008AD9C8 /* ip_assigner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C41A227C6D864008AD9C8 /* ip_assigner.cpp */; };
+		9C6C41A827C6D864008AD9C8 /* GalilController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418A27C6D863008AD9C8 /* GalilController.cpp */; };
+		9C6C41A927C6D864008AD9C8 /* remote_server_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418E27C6D863008AD9C8 /* remote_server_example.cpp */; };
+		9C6C41AA27C6D864008AD9C8 /* message.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419427C6D863008AD9C8 /* message.cpp */; };
+		9C6C41AB27C6D864008AD9C8 /* remote_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419127C6D863008AD9C8 /* remote_server.cpp */; };
+		9C6C41AC27C6D864008AD9C8 /* motion_complete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419227C6D863008AD9C8 /* motion_complete.cpp */; };
+		9C6C41AD27C6D864008AD9C8 /* remote_client_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419D27C6D863008AD9C8 /* remote_client_example.cpp */; };
+		9C6C41AE27C6D864008AD9C8 /* contour_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418B27C6D863008AD9C8 /* contour_example.cpp */; };
+		9C6C41AF27C6D864008AD9C8 /* position_tracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419627C6D863008AD9C8 /* position_tracking.cpp */; };
+		9C6C41B027C6D864008AD9C8 /* message_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419527C6D863008AD9C8 /* message_example.cpp */; };
+		9C6C41B127C6D864008AD9C8 /* record_position_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C41A027C6D863008AD9C8 /* record_position_example.cpp */; };
+		9C6C41B227C6D864008AD9C8 /* record_position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419C27C6D863008AD9C8 /* record_position.cpp */; };
+		9C6C41B327C6D864008AD9C8 /* remote_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418D27C6D863008AD9C8 /* remote_client.cpp */; };
+		9C6C41B427C6D864008AD9C8 /* commands_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419F27C6D863008AD9C8 /* commands_example.cpp */; };
+		9C6C41B527C6D864008AD9C8 /* motion_complete_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419827C6D863008AD9C8 /* motion_complete_example.cpp */; };
+		9C6C41B627C6D864008AD9C8 /* jog_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418927C6D863008AD9C8 /* jog_example.cpp */; };
+		9C6C41B727C6D864008AD9C8 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419A27C6D863008AD9C8 /* vector.cpp */; };
+		9C6C41B827C6D864008AD9C8 /* position_tracking_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C419027C6D863008AD9C8 /* position_tracking_example.cpp */; };
+		9C6C41B927C6D864008AD9C8 /* vector_example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C418F27C6D863008AD9C8 /* vector_example.cpp */; };
+		9C6C41BF27C6D998008AD9C8 /* gclib_record.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6C41BB27C6D998008AD9C8 /* gclib_record.h */; };
+		9C6C41C027C6D998008AD9C8 /* gclib_errors.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6C41BC27C6D998008AD9C8 /* gclib_errors.h */; };
+		9C6C41C127C6D998008AD9C8 /* gclib.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6C41BD27C6D998008AD9C8 /* gclib.h */; };
+		9C6C41C227C6D998008AD9C8 /* gclibo.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6C41BE27C6D998008AD9C8 /* gclibo.h */; };
+		9C6C41C427C6DBB7008AD9C8 /* GalilController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C41C327C6DBB7008AD9C8 /* GalilController.m */; };
 		9C8D587127C6D7D3006C4421 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D587027C6D7D3006C4421 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +51,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9C6C418927C6D863008AD9C8 /* jog_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jog_example.cpp; sourceTree = "<group>"; };
+		9C6C418A27C6D863008AD9C8 /* GalilController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GalilController.cpp; sourceTree = "<group>"; };
+		9C6C418B27C6D863008AD9C8 /* contour_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = contour_example.cpp; sourceTree = "<group>"; };
+		9C6C418C27C6D863008AD9C8 /* contour.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = contour.cpp; sourceTree = "<group>"; };
+		9C6C418D27C6D863008AD9C8 /* remote_client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = remote_client.cpp; sourceTree = "<group>"; };
+		9C6C418E27C6D863008AD9C8 /* remote_server_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = remote_server_example.cpp; sourceTree = "<group>"; };
+		9C6C418F27C6D863008AD9C8 /* vector_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector_example.cpp; sourceTree = "<group>"; };
+		9C6C419027C6D863008AD9C8 /* position_tracking_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = position_tracking_example.cpp; sourceTree = "<group>"; };
+		9C6C419127C6D863008AD9C8 /* remote_server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = remote_server.cpp; sourceTree = "<group>"; };
+		9C6C419227C6D863008AD9C8 /* motion_complete.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = motion_complete.cpp; sourceTree = "<group>"; };
+		9C6C419327C6D863008AD9C8 /* commands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = commands.cpp; sourceTree = "<group>"; };
+		9C6C419427C6D863008AD9C8 /* message.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = message.cpp; sourceTree = "<group>"; };
+		9C6C419527C6D863008AD9C8 /* message_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = message_example.cpp; sourceTree = "<group>"; };
+		9C6C419627C6D863008AD9C8 /* position_tracking.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = position_tracking.cpp; sourceTree = "<group>"; };
+		9C6C419727C6D863008AD9C8 /* ip_assigner_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ip_assigner_example.cpp; sourceTree = "<group>"; };
+		9C6C419827C6D863008AD9C8 /* motion_complete_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = motion_complete_example.cpp; sourceTree = "<group>"; };
+		9C6C419927C6D863008AD9C8 /* jog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jog.cpp; sourceTree = "<group>"; };
+		9C6C419A27C6D863008AD9C8 /* vector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
+		9C6C419B27C6D863008AD9C8 /* examples.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = examples.h; sourceTree = "<group>"; };
+		9C6C419C27C6D863008AD9C8 /* record_position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = record_position.cpp; sourceTree = "<group>"; };
+		9C6C419D27C6D863008AD9C8 /* remote_client_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = remote_client_example.cpp; sourceTree = "<group>"; };
+		9C6C419E27C6D863008AD9C8 /* GalilController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = GalilController.h; sourceTree = "<group>"; };
+		9C6C419F27C6D863008AD9C8 /* commands_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = commands_example.cpp; sourceTree = "<group>"; };
+		9C6C41A027C6D863008AD9C8 /* record_position_example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = record_position_example.cpp; sourceTree = "<group>"; };
+		9C6C41A127C6D863008AD9C8 /* vector_points.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = vector_points.txt; sourceTree = "<group>"; };
+		9C6C41A227C6D864008AD9C8 /* ip_assigner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ip_assigner.cpp; sourceTree = "<group>"; };
+		9C6C41BB27C6D998008AD9C8 /* gclib_record.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gclib_record.h; path = ../../../../Applications/gclib/include/gclib_record.h; sourceTree = "<group>"; };
+		9C6C41BC27C6D998008AD9C8 /* gclib_errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gclib_errors.h; path = ../../../../Applications/gclib/include/gclib_errors.h; sourceTree = "<group>"; };
+		9C6C41BD27C6D998008AD9C8 /* gclib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gclib.h; path = ../../../../Applications/gclib/include/gclib.h; sourceTree = "<group>"; };
+		9C6C41BE27C6D998008AD9C8 /* gclibo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gclibo.h; path = ../../../../Applications/gclib/include/gclibo.h; sourceTree = "<group>"; };
+		9C6C41C327C6DBB7008AD9C8 /* GalilController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalilController.m; path = ../amiro/src/matlab_scripts/GalilController.m; sourceTree = "<group>"; };
 		9C8D586D27C6D7D3006C4421 /* GalilMotionController */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GalilMotionController; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8D587027C6D7D3006C4421 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,17 +91,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6C41BF27C6D998008AD9C8 /* gclib_record.h in Frameworks */,
+				9C6C41C027C6D998008AD9C8 /* gclib_errors.h in Frameworks */,
+				9C6C41C127C6D998008AD9C8 /* gclib.h in Frameworks */,
+				9C6C41C227C6D998008AD9C8 /* gclibo.h in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C6C41BA27C6D998008AD9C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C6C41BC27C6D998008AD9C8 /* gclib_errors.h */,
+				9C6C41BB27C6D998008AD9C8 /* gclib_record.h */,
+				9C6C41BD27C6D998008AD9C8 /* gclib.h */,
+				9C6C41BE27C6D998008AD9C8 /* gclibo.h */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C8D586427C6D7D3006C4421 = {
 			isa = PBXGroup;
 			children = (
+				9C6C41C327C6DBB7008AD9C8 /* GalilController.m */,
 				9C8D586F27C6D7D3006C4421 /* GalilMotionController */,
 				9C8D586E27C6D7D3006C4421 /* Products */,
+				9C6C41BA27C6D998008AD9C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +133,32 @@
 		9C8D586F27C6D7D3006C4421 /* GalilMotionController */ = {
 			isa = PBXGroup;
 			children = (
+				9C6C419F27C6D863008AD9C8 /* commands_example.cpp */,
+				9C6C419327C6D863008AD9C8 /* commands.cpp */,
+				9C6C418B27C6D863008AD9C8 /* contour_example.cpp */,
+				9C6C418C27C6D863008AD9C8 /* contour.cpp */,
+				9C6C419B27C6D863008AD9C8 /* examples.h */,
+				9C6C418A27C6D863008AD9C8 /* GalilController.cpp */,
+				9C6C419E27C6D863008AD9C8 /* GalilController.h */,
+				9C6C419727C6D863008AD9C8 /* ip_assigner_example.cpp */,
+				9C6C41A227C6D864008AD9C8 /* ip_assigner.cpp */,
+				9C6C418927C6D863008AD9C8 /* jog_example.cpp */,
+				9C6C419927C6D863008AD9C8 /* jog.cpp */,
+				9C6C419527C6D863008AD9C8 /* message_example.cpp */,
+				9C6C419427C6D863008AD9C8 /* message.cpp */,
+				9C6C419827C6D863008AD9C8 /* motion_complete_example.cpp */,
+				9C6C419227C6D863008AD9C8 /* motion_complete.cpp */,
+				9C6C419027C6D863008AD9C8 /* position_tracking_example.cpp */,
+				9C6C419627C6D863008AD9C8 /* position_tracking.cpp */,
+				9C6C41A027C6D863008AD9C8 /* record_position_example.cpp */,
+				9C6C419C27C6D863008AD9C8 /* record_position.cpp */,
+				9C6C419D27C6D863008AD9C8 /* remote_client_example.cpp */,
+				9C6C418D27C6D863008AD9C8 /* remote_client.cpp */,
+				9C6C418E27C6D863008AD9C8 /* remote_server_example.cpp */,
+				9C6C419127C6D863008AD9C8 /* remote_server.cpp */,
+				9C6C418F27C6D863008AD9C8 /* vector_example.cpp */,
+				9C6C41A127C6D863008AD9C8 /* vector_points.txt */,
+				9C6C419A27C6D863008AD9C8 /* vector.cpp */,
 				9C8D587027C6D7D3006C4421 /* main.cpp */,
 			);
 			path = GalilMotionController;
@@ -119,7 +221,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6C41A327C6D864008AD9C8 /* contour.cpp in Sources */,
+				9C6C41AF27C6D864008AD9C8 /* position_tracking.cpp in Sources */,
+				9C6C41AA27C6D864008AD9C8 /* message.cpp in Sources */,
+				9C6C41A527C6D864008AD9C8 /* commands.cpp in Sources */,
+				9C6C41A427C6D864008AD9C8 /* ip_assigner_example.cpp in Sources */,
+				9C6C41AD27C6D864008AD9C8 /* remote_client_example.cpp in Sources */,
+				9C6C41AE27C6D864008AD9C8 /* contour_example.cpp in Sources */,
+				9C6C41B227C6D864008AD9C8 /* record_position.cpp in Sources */,
+				9C6C41B727C6D864008AD9C8 /* vector.cpp in Sources */,
+				9C6C41A827C6D864008AD9C8 /* GalilController.cpp in Sources */,
 				9C8D587127C6D7D3006C4421 /* main.cpp in Sources */,
+				9C6C41AC27C6D864008AD9C8 /* motion_complete.cpp in Sources */,
+				9C6C41B127C6D864008AD9C8 /* record_position_example.cpp in Sources */,
+				9C6C41B327C6D864008AD9C8 /* remote_client.cpp in Sources */,
+				9C6C41B927C6D864008AD9C8 /* vector_example.cpp in Sources */,
+				9C6C41B527C6D864008AD9C8 /* motion_complete_example.cpp in Sources */,
+				9C6C41AB27C6D864008AD9C8 /* remote_server.cpp in Sources */,
+				9C6C41B627C6D864008AD9C8 /* jog_example.cpp in Sources */,
+				9C6C41B827C6D864008AD9C8 /* position_tracking_example.cpp in Sources */,
+				9C6C41B027C6D864008AD9C8 /* message_example.cpp in Sources */,
+				9C6C41B427C6D864008AD9C8 /* commands_example.cpp in Sources */,
+				9C6C41A627C6D864008AD9C8 /* jog.cpp in Sources */,
+				9C6C41C427C6DBB7008AD9C8 /* GalilController.m in Sources */,
+				9C6C41A727C6D864008AD9C8 /* ip_assigner.cpp in Sources */,
+				9C6C41A927C6D864008AD9C8 /* remote_server_example.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +255,7 @@
 		9C8D587227C6D7D3006C4421 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -182,12 +309,15 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Debug;
 		};
 		9C8D587327C6D7D3006C4421 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -234,6 +364,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Release;
 		};

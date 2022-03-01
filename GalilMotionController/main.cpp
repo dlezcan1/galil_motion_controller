@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include "GalilController.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
