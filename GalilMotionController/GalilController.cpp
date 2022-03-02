@@ -1,6 +1,7 @@
 #include "GalilController.h"
 
 #include <algorithm>
+#include <iostream>
 
 
 
@@ -153,15 +154,20 @@ long* GalilController::getPosition(bool axes[GALIL_NUM_AXES], bool absolute)
     
     // get the response
     GCStringOut response = this->command(command);
+    std::string s_response(response);
     
     // parse the response
     long* positions = new long[GALIL_NUM_AXES];
-    
+    for (int i = 0; i < GALIL_NUM_AXES; i++)
+        positions[i] = NULL_LONG_AXIS; // initalize array
+
+    /*
     char* token = strtok(response ,",");
     int counter = 0;
     while(token != NULL && counter < GALIL_NUM_AXES)
     {
         bool isnumeric = std::string(token).find_first_not_of("0123456789") == std::string::npos;
+        std::cout << "Token = " << token << " | isnumeric = " << isnumeric << std::endl;
         if (isnumeric && axes[counter])
             positions[counter++] = std::stol(token);
         
@@ -170,10 +176,46 @@ long* GalilController::getPosition(bool axes[GALIL_NUM_AXES], bool absolute)
         
         
         token = strtok(NULL, ",");
+
+        std::cout << "positions[" << counter-1 << "] = " << positions[counter-1] << std::endl;
         
     } // while
+    */
+    std::string token;
+    s_response += ","; // add-on to end to get last part
+    std::size_t pos = 0;
+
+    int counter = -1;
+    auto update_counter = [&counter, &axes](){
+        while(!axes[++counter] && counter < GALIL_NUM_AXES) 
+            continue;
+        };
+    update_counter();
     
+    while((pos = s_response.find(",")) != std::string::npos)
+    {
+        token = s_response.substr(0, pos);
+        bool isnumeric = token.find_first_not_of("0123456789 ") == std::string::npos;
+
+        if (isnumeric)
+        {
+            // add to result
+            if (counter >= GALIL_NUM_AXES)
+                break;
+        
+
+            positions[counter] = std::stol(token);
+            update_counter();
+            
+        } // if
+
+        s_response.erase(0, pos + 1); // remove the processed part of string
+
+    } // while
+
     return positions;
+
+    
     
 } // GalilController::getPosition
 

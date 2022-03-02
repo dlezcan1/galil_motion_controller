@@ -8,6 +8,7 @@
 #include <vector>
 #include <limits>
 #include <cmath>
+#include <cstring>
 
 #define GALIL_BUFFER_SIZE G_SMALL_BUFFER
 #define GALIL_NUM_AXES 5
