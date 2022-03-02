@@ -1,7 +1,6 @@
 #include "GalilController.h"
 
 #include <algorithm>
-#include <iostream>
 
 
 
