@@ -32,15 +32,15 @@ int main(int argc, const char * argv[]) {
         std::cout << "Axes position [" << i << "] = " << positions[i] << std::endl;
     
     // String input and output
-    std::string command;
-    while (false)
-    {
-        std::cout << "Galil Controller Message: ";
-        std::getline(std::cin, command);
-        // std::cout << command << std::endl;
-        printCommandResponse(gc, command);
-        
-    } // while
+//    std::string command;
+//    while (true)
+//    {
+//        std::cout << "Galil Controller Message: ";
+//        std::getline(std::cin, command);
+//        // std::cout << command << std::endl;
+//        printCommandResponse(gc, command);
+//        
+//    } // while
     
     delete gc;
 
