@@ -112,8 +112,7 @@ public:
      */
     GReturn zeroAxes(bool axes[GALIL_NUM_AXES]);
     
-    
-protected:
+    /** Get the axis Name for each axes */
     static inline char axisName(unsigned int axis){ return static_cast<char>(65 + axis); }
     
 private: // members

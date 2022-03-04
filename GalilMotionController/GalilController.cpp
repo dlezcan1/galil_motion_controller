@@ -41,7 +41,7 @@ GCStringOut GalilController::command(GCStringIn command)
 
 GCStringOut GalilController::motionComplete()
 {
-    return (GCStringOut) "1";
+    return (GCStringOut) "1";  // TODO: implement
     
 } // GalilController:: motionComplete
 
