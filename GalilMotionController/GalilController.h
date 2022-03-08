@@ -59,7 +59,7 @@ public:
      
      */
     GCStringOut command(GCStringIn command);
-    GCStringOut command(std::string command){ return this->command(command.c_str()); }
+    GCStringOut command(std::string& command){ return this->command(command.c_str()); }
     
     /** Get the axes positions
      
@@ -67,7 +67,7 @@ public:
      @param absolute (bool, Default=false) whether to get the absolute positions or not.
      
      */
-    long* getPosition(bool axes[GALIL_NUM_AXES], bool absolute=false);
+    long* getPosition (bool axes[GALIL_NUM_AXES], bool absolute=false);
     
     /* Check if motion is complete */
     GCStringOut motionComplete();
@@ -121,9 +121,15 @@ private: // members
     char m_buffer[GALIL_BUFFER_SIZE];
     
 private: // methods
+    
+    // static methods
     static inline GCStringOut bufferToGCStringOut(char* buffer, unsigned int buffer_size);
-    inline void flushBuffer(){ memset(m_buffer, 0, GALIL_BUFFER_SIZE); }
     static inline void e(GReturn rc){ if (rc != G_NO_ERROR) throw rc; }
+    
+    // member methods
+    /** Flush the buffer memory  */
+    inline void flushBuffer(){ memset(m_buffer, 0, GALIL_BUFFER_SIZE); }
+    
     
 }; // class: GalilController
 

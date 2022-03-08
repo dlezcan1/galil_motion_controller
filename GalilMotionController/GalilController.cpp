@@ -27,7 +27,7 @@ GCStringOut GalilController::bufferToGCStringOut(char* buffer, unsigned int buff
     
 } // GalilController::bufferToGCStringOut
 
-GCStringOut GalilController::command(GCStringIn command)
+GCStringOut GalilController::command(GCStringIn command) 
 {
     e(GCmdT(m_gc, command, m_buffer, GALIL_BUFFER_SIZE, NULL)); // trimmed version
     // this->e(GCommand(m_gc, command, m_buffer, G_SMALL_BUFFER, &m_bytesRead)); // full version

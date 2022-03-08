@@ -31,26 +31,40 @@ public:
   
     */
     NeedleInsertionRobot(GCStringIn ipAddress);
-    
     ~NeedleInsertionRobot();
     
     /** Get the galil controller for custom commands
             
             @returns GalilController pointer to current controller
      */
-    GalilController* getController() const {return m_controller;}
+    const std::shared_ptr<GalilController> getGalilController() const {return m_galilController;}
     /** Send a direct commadn to the galiil controller
             @param command GCStringIn of the galil command to send
      */
-    GCStringOut galilCommand(GCStringIn command){ return m_controller->command(command); }
-    GCStringOut galilCommand(std::string command){ return m_controller->command(command); }
+    GCStringOut galilCommand(GCStringIn command) const { return m_galilController->command(command); }
+    GCStringOut galilCommand(std::string& command) const { return m_galilController->command(command); }
     
     /** Motor control commands */
-    void abort(){m_controller->abort();}
+    void abort(){m_galilController->abort();}
+    
+    /** Motor Control shortcuts */
+    void allMotorsOn () const { motorsOn (m_axes); }
+    void allMotorsOff() const { motorsOff(m_axes); }
+    
+    /** Get motor position commands
+        @param axes boolean array of which axes that would like to be queried
+        @param absolute (default=false) whether to use absolute positioning or not
+     */
+    float* getPosition(const bool axes[ROBOT_NUM_AXES], const bool absolute=false) const;
+    // single axis-implementations
+    float getPositionX (const bool absolute=false) const {bool axes[ROBOT_NUM_AXES] = {true,  false, false, false}; return getPosition(axes, absolute)[0]; }
+    float getPositionY (const bool absolute=false) const {bool axes[ROBOT_NUM_AXES] = {false, true,  false, false}; return getPosition(axes, absolute)[1]; }
+    float getPositionZ (const bool absolute=false) const {bool axes[ROBOT_NUM_AXES] = {false, false, true,  false}; return getPosition(axes, absolute)[2]; }
+    float getPositionLS(const bool absolute=false) const {bool axes[ROBOT_NUM_AXES] = {false, false, true,  false}; return getPosition(axes, absolute)[3]; }
     
     // turn on/off the motors
-    void motorsOn(const bool axes[ROBOT_NUM_AXES]);
-    void motorsOff(const bool axes[ROBOT_NUM_AXES]);
+    void motorsOn (const bool axes[ROBOT_NUM_AXES]) const;
+    void motorsOff(const bool axes[ROBOT_NUM_AXES]) const;
     
     /**
      Move the axes
@@ -59,37 +73,37 @@ public:
      @param absolute (bool, Default=false) whether to perform absolute movements or not
      
      */
-    void moveAxes(const float axes[ROBOT_NUM_AXES], bool absolute=false){if (absolute) return moveAxesAbsolute(axes); else return moveAxesRelative(axes);}
-    void moveAxesAbsolute(const float axes[ROBOT_NUM_AXES]); // absolute move axes
-    void moveAxesRelative(const float axes[ROBOT_NUM_AXES]); // relative move axes
+    void moveAxes(const float axes[ROBOT_NUM_AXES], bool absolute=false) const {if (absolute) return moveAxesAbsolute(axes); else return moveAxesRelative(axes);}
+    void moveAxesAbsolute(const float axes[ROBOT_NUM_AXES]) const ; // absolute move axes
+    void moveAxesRelative(const float axes[ROBOT_NUM_AXES]) const ; // relative move axes
     
     /* Controller commands to set control parameters */
     /** Set PID constants
      
      */
-    void setPID_P(const long kp_axes[ROBOT_NUM_AXES]);
-    void setPID_I(const long ki_axes[ROBOT_NUM_AXES]);
-    void setPID_D(const long kd_axes[ROBOT_NUM_AXES]);
+    void setPID_P(const long kp_axes[ROBOT_NUM_AXES]) const;
+    void setPID_I(const long ki_axes[ROBOT_NUM_AXES]) const;
+    void setPID_D(const long kd_axes[ROBOT_NUM_AXES]) const;
     
     
-    /** Set speed control variables
-                
-     
-     */
-    void setAcceleration(const float ac_axes[ROBOT_NUM_AXES]);
-    void setDeceleration(const float dc_axes[ROBOT_NUM_AXES]);
-    void setSpeed(const float sp_axes[ROBOT_NUM_AXES]);
+    /** Set speed control variables  */
+    void setAcceleration(const float ac_axes[ROBOT_NUM_AXES]) const;
+    void setDeceleration(const float dc_axes[ROBOT_NUM_AXES]) const;
+    void setSpeed(const float sp_axes[ROBOT_NUM_AXES]) const;
     
     /** Stop moving axes
      @param axes bool[GALIL_NUM_AXES[] on whether to stop particular axes or not
      */
-    void stopAxes(const bool axes[ROBOT_NUM_AXES]);
+    void stopAxes(const bool axes[ROBOT_NUM_AXES]) const;
+    void stopAllAxes() const { stopAxes(m_axes); }
     
     /** Zero specific axes
      @param axes bool[GALIL_NUM_AXES[] on whether to stop particular axes or not
      */
-    void zeroAxes(const bool axes[ROBOT_NUM_AXES]);
-    
+    void zeroAxes(const bool axes[ROBOT_NUM_AXES]) const;
+    void zeroAllAxes() const { zeroAxes(m_axes); }
+
+// public member functions
 public: // static defaults
     /* Speed defaults */
     constexpr static const float s_default_speed[ROBOT_NUM_AXES]        = {2.5, 2.5, 2.5, 2.0}; // speeds per mm
@@ -101,15 +115,21 @@ public: // static defaults
     constexpr static const long s_default_kI[ROBOT_NUM_AXES] = {  4,   4,   4,   4};
     constexpr static const long s_default_kD[ROBOT_NUM_AXES] = {480, 332, 480, 480};
 
+// public static members
+private: // private members
+    std::shared_ptr<GalilController> m_galilController;
+    const bool m_axes[GALIL_NUM_AXES] = {false, true, true, true, true}; // Galil axes that are turned on
+    const float m_countsPerDistance[ROBOT_NUM_AXES] = {2000.0, 2000.0, 2000.0, 43680.0}; // calibrated counts/mm
     
+// private
 protected:
-    /* Index for each axes */
+    /* Index for each axes in the Galil Controller Axes */
     const size_t m_xIdx  = 1; // B: x axis
     const size_t m_yIdx  = 2; // C: y axis
     const size_t m_zIdx  = 3; // D: z axis
     const size_t m_lsIdx = 4; // E: linear stage axis
     
-    size_t getGalilAxisIndex(size_t axis)
+    size_t getGalilAxisIndex(size_t axis) const
     {
         switch (axis)
         {
@@ -132,7 +152,7 @@ protected:
     
     /* Robot <---> Galil Axis mappings */
     template <typename T>
-    T* galilToRobotAxes(const T axes[GALIL_NUM_AXES])
+    T* galilToRobotAxes(const T axes[GALIL_NUM_AXES]) const
     {
         T* robot_axes = new T[ROBOT_NUM_AXES];
         
@@ -144,7 +164,7 @@ protected:
         
     } // galilToRobotAxes
     
-    bool* robotToGalilAxes(const bool axes[ROBOT_NUM_AXES])
+    bool* robotToGalilAxes(const bool axes[ROBOT_NUM_AXES]) const
     {
         bool* gc_axes = new bool[GALIL_NUM_AXES];
         
@@ -160,7 +180,7 @@ protected:
         
     } // robotToGalilAxes (bool)
     
-    long* robotToGalilAxes(const long axes[ROBOT_NUM_AXES])
+    long* robotToGalilAxes(const long axes[ROBOT_NUM_AXES]) const
     {
         long* gc_axes = new long[GALIL_NUM_AXES];
         
@@ -183,7 +203,7 @@ protected:
         @returns float array of the measurements in encoder counts
      
      */
-    float* countsToDistance(const long axes[ROBOT_NUM_AXES])
+    float* countsToDistance(const long axes[ROBOT_NUM_AXES]) const
     {
         float* f_axes = new float[ROBOT_NUM_AXES];
         
@@ -199,7 +219,7 @@ protected:
      
         @returns long array of the measurements in encoder counts
      */
-    long* distanceToCounts(const float axes[ROBOT_NUM_AXES])
+    long* distanceToCounts(const float axes[ROBOT_NUM_AXES]) const
     {
         long* l_axes = new long[ROBOT_NUM_AXES];
         
@@ -208,11 +228,9 @@ protected:
             l_axes[i] = isNullAxis(axes[i]) ? NULL_LONG_AXIS : std::round(axes[i] * m_countsPerDistance[i]);
         
         return l_axes;
+        
     } // distanceToCounts
     
-private:
-    GalilController* m_controller;
-    const bool m_axes[GALIL_NUM_AXES] = {false, true, true, true, true};
-    const float m_countsPerDistance[ROBOT_NUM_AXES] = {2000.0, 2000.0, 2000.0, 43680.0}; // calibrated counts/mm
+// protected
     
 }; // class: NeedleInsertionRobot
